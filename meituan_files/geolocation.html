@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+        <title>腾讯地图 - 前端定位组件</title>
+        
+        
+        
+    <link rel="stylesheet" href="geolocation_data/geolocation_c55a9bf.css"></head>
+    <body>
+        <p id="geoResult">定位中....</p>
+        <div id="loading">
+            
+        </div>
+
+        
+
+        
+    <script type="text/javascript" src="geolocation_data/mod_0d3c97a.js"></script><script type="text/javascript" src="geolocation_data/geolocation_libs_d607b87.js"></script><script type="text/javascript">!function() {
+
+    window.listener.on('common.geolocation', 'success', function(evt, loc) {
+        var result = loc.addr || loc.city;
+        document.getElementById('geoResult').innerHTML = result;
+        document.getElementById('loading').className = 'fadeout';
+    });
+    window.listener.on('common.geolocation', 'fail', function() {
+        document.getElementById('geoResult').innerHTML = '定位失败';
+        document.getElementById('loading').className = 'fadeout';
+    });
+
+    window._prStat = require('geolocation:static/js/util/stat.js');
+    window._prStat.init({
+        appId: 'mc_geolocation',
+        statService: '//jiejing.qq.com/proxy/pr/pingd',
+        from: 'waimaiapp'
+    });
+
+    window._DEFAULT_CITY = {"module":"geolocation","type":"ip","adcode":110000,"nation":"中国","province":"北京市","city":"北京市","district":"","addr":"","lat":39.90403,"lng":116.407526,"accuracy":10000,"ip":"114.249.220.53"};
+    require('geolocation:static/js/boot.js').init({key: 'DZYBZ-73WWI-FG6GZ-5JRFR-PNVIE-4OFUL', debug: 0, clearCache: 0,locType: ''});
+    }();</script>
+
+    
+
+</body></html>
